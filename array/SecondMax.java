@@ -1,16 +1,21 @@
-public class SecondMax {
-     public static void main(String[] args) {
-        int arr[]={12,90,34,23,8};
-        int max=Integer.MIN_VALUE;
-        int smax=Integer.MIN_VALUE;
+public class secondMax {
+    public static void main(String[] args) {
+        int arr[]={1,7,56,9,34,63};
+        int value= Max(arr);
+        System.out.println(value);
+    }
+    public static int Max(int []arr){
+        int max=arr[0];
+        int smax=-1;
         for(int i=0;i<arr.length;i++){
-            if (arr[i]>max) {
+            if(arr[i]>max){
+                smax=max;
                 max=arr[i];
-            } else if (arr[i]>smax) {
+            }
+            else if(arr[i]>smax && arr[i]<max){
                 smax=arr[i];
             }
         }
-        System.out.println("Maximum = "+max);
-        System.out.println("Second Maximum = "+smax);
-     }
+        return smax;
+    }
 }
